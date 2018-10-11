@@ -23,30 +23,10 @@ app.use(bodyParser.json());
 
 
 io.on('connection', (socket) => {
-    console.log('user connected');
+    console.log('A user connected');
 });
 
 
-server.listen(8000, () => {
-    console.log('Server started!');
-});
-
-app.route('/api/cats').get((req, res) => {
-
-
-    res.send({ message: 'All cats returned' });
-
-});
-
-
-app.route('/api/cats/:name').get((req, res) => {
-
-    const requestedCatName = req.params['name'];
-
-    res.send({ name: requestedCatName });
-
-});
-
-app.route('/api/cats').post((req, res) => {
-    res.send(201, req.body);
+server.listen(9000, () => {
+    console.log('Server is live');
 });
