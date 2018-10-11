@@ -71,6 +71,7 @@ io.on('connection', (socket) => {
             db.collection('connected_users').insertOne({user: USERUUID}, (err, result) => {
 
                 if(err) console.log(err);
+                socket.emit('uuidassign', USERUUID);
 
             });
 
